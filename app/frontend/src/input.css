@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand green */
+  --color-brand-50: #effaf3;
+  --color-brand-100: #d7f3e1;
+  --color-brand-200: #b2e7c7;
+  --color-brand-500: #1fa75a;
+  --color-brand-600: #168a49;
+  --color-brand-700: #136d3c;
+  --color-brand-900: #0b3d22;
+
+  /* Orange accent (use sparingly) */
+  --color-accent-100: #fff1e0;
+  --color-accent-400: #ffa94d;
+  --color-accent-500: #f78a1d;
+  --color-accent-600: #dd7410;
+}

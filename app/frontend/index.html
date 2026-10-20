@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mimoni | Simple expense tracking</title>
+    <meta name="description" content="Mimoni helps you log expenses in seconds and see where your money goes." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-white font-sans text-slate-700 antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-30 border-b border-slate-100 bg-white/80 backdrop-blur">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#" class="flex items-center gap-2 text-lg font-bold text-brand-900">
+          <span class="grid size-9 place-items-center rounded-xl bg-brand-600 text-white">M</span>
+          Mimoni
+        </a>
+
+        <div class="hidden items-center gap-8 text-sm font-medium md:flex">
+          <a href="#features" class="transition hover:text-brand-600">Features</a>
+          <a href="#how" class="transition hover:text-brand-600">How it works</a>
+          <a href="#dashboard" class="transition hover:text-brand-600">Dashboard</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="#" class="hidden text-sm font-medium transition hover:text-brand-600 sm:block">Log in</a>
+          <a href="#get-started" class="rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">
+            Get started
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="bg-gradient-to-b from-brand-50 to-white">
+        <div class="mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 lg:grid-cols-2 lg:py-28">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full bg-accent-100 px-3 py-1 text-xs font-semibold text-accent-600">
+              <span class="size-1.5 rounded-full bg-accent-500"></span>
+              Simple personal finance
+            </span>
+
+            <h1 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-brand-900 sm:text-5xl lg:text-6xl">
+              Know exactly where your money goes.
+            </h1>
+
+            <p class="mt-5 max-w-lg text-lg leading-relaxed text-slate-600">
+              Mimoni lets you log expenses in seconds and keeps everything tidy, with no clutter and no duplicates.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#get-started" class="rounded-full bg-accent-500 px-7 py-3.5 font-semibold text-white shadow-lg shadow-accent-500/25 transition hover:bg-accent-600">
+                Start tracking free
+              </a>
+              <a href="#how" class="rounded-full border border-brand-200 px-7 py-3.5 font-semibold text-brand-700 transition hover:bg-brand-50">
+                See how it works
+              </a>
+            </div>
+          </div>
+
+          <!-- Dashboard preview -->
+          <div id="dashboard" class="relative">
+            <div class="absolute -inset-4 -z-10 rounded-[2rem] bg-brand-100/60 blur-2xl"></div>
+
+            <div class="rounded-3xl border border-slate-100 bg-white p-6 shadow-xl shadow-brand-900/5">
+              <div class="flex items-start justify-between">
+                <div>
+                  <p class="text-sm text-slate-500">Spent this month</p>
+                  <p class="mt-1 text-3xl font-bold text-brand-900">$1,284.50</p>
+                </div>
+                <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">-8% vs last month</span>
+              </div>
+
+              <!-- Mini bar chart -->
+              <div class="mt-6 flex h-24 items-end gap-2">
+                <div class="h-[40%] flex-1 rounded-md bg-brand-100"></div>
+                <div class="h-[65%] flex-1 rounded-md bg-brand-100"></div>
+                <div class="h-[50%] flex-1 rounded-md bg-brand-100"></div>
+                <div class="h-[85%] flex-1 rounded-md bg-brand-500"></div>
+                <div class="h-[60%] flex-1 rounded-md bg-brand-100"></div>
+                <div class="h-[75%] flex-1 rounded-md bg-accent-400"></div>
+                <div class="h-[45%] flex-1 rounded-md bg-brand-100"></div>
+              </div>
+
+              <!-- Recent expenses -->
+              <ul class="mt-6 divide-y divide-slate-100 text-sm">
+                <li class="flex items-center justify-between py-3">
+                  <div class="flex items-center gap-3">
+                    <span class="grid size-9 place-items-center rounded-lg bg-brand-50 text-brand-600">🛒</span>
+                    <div>
+                      <p class="font-semibold text-slate-800">Groceries</p>
+                      <p class="text-xs text-slate-400">Today</p>
+                    </div>
+                  </div>
+                  <span class="font-semibold text-slate-800">-$54.20</span>
+                </li>
+                <li class="flex items-center justify-between py-3">
+                  <div class="flex items-center gap-3">
+                    <span class="grid size-9 place-items-center rounded-lg bg-accent-100 text-accent-600">🚌</span>
+                    <div>
+                      <p class="font-semibold text-slate-800">Transport</p>
+                      <p class="text-xs text-slate-400">Yesterday</p>
+                    </div>
+                  </div>
+                  <span class="font-semibold text-slate-800">-$12.00</span>
+                </li>
+                <li class="flex items-center justify-between py-3">
+                  <div class="flex items-center gap-3">
+                    <span class="grid size-9 place-items-center rounded-lg bg-brand-50 text-brand-600">💡</span>
+                    <div>
+                      <p class="font-semibold text-slate-800">Electricity</p>
+                      <p class="text-xs text-slate-400">Mon</p>
+                    </div>
+                  </div>
+                  <span class="font-semibold text-slate-800">-$38.75</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="mx-auto max-w-6xl px-6 py-20">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-brand-900 sm:text-4xl">Everything you need, nothing you don't</h2>
+          <p class="mt-4 text-slate-600">Mimoni keeps expense tracking light so you actually stick with it.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-3">
+          <article class="rounded-2xl border border-slate-100 p-7 transition hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/5">
+            <div class="grid size-11 place-items-center rounded-xl bg-brand-50 text-xl">⚡</div>
+            <h3 class="mt-5 text-lg font-semibold text-brand-900">Add in seconds</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Amount, category, date. One quick form and your expense is saved.</p>
+          </article>
+
+          <article class="rounded-2xl border border-slate-100 p-7 transition hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/5">
+            <div class="grid size-11 place-items-center rounded-xl bg-accent-100 text-xl">🧹</div>
+            <h3 class="mt-5 text-lg font-semibold text-brand-900">No duplicates</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Mimoni spots an expense you've already logged, so your totals stay accurate.</p>
+          </article>
+
+          <article class="rounded-2xl border border-slate-100 p-7 transition hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/5">
+            <div class="grid size-11 place-items-center rounded-xl bg-brand-50 text-xl">📊</div>
+            <h3 class="mt-5 text-lg font-semibold text-brand-900">Clear monthly view</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">See your spending by category and spot trends without any spreadsheets.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how" class="bg-brand-50">
+        <div class="mx-auto max-w-6xl px-6 py-20">
+          <h2 class="text-center text-3xl font-bold tracking-tight text-brand-900 sm:text-4xl">How it works</h2>
+
+          <ol class="mt-14 grid gap-10 md:grid-cols-3">
+            <li class="text-center">
+              <span class="mx-auto grid size-12 place-items-center rounded-full bg-brand-600 text-lg font-bold text-white">1</span>
+              <h3 class="mt-5 font-semibold text-brand-900">Log an expense</h3>
+              <p class="mt-2 text-sm text-slate-600">Enter what you spent and where it belongs.</p>
+            </li>
+            <li class="text-center">
+              <span class="mx-auto grid size-12 place-items-center rounded-full bg-brand-600 text-lg font-bold text-white">2</span>
+              <h3 class="mt-5 font-semibold text-brand-900">We keep it clean</h3>
+              <p class="mt-2 text-sm text-slate-600">Duplicates are caught before they reach your records.</p>
+            </li>
+            <li class="text-center">
+              <span class="mx-auto grid size-12 place-items-center rounded-full bg-accent-500 text-lg font-bold text-white">3</span>
+              <h3 class="mt-5 font-semibold text-brand-900">Review your month</h3>
+              <p class="mt-2 text-sm text-slate-600">Check totals and categories whenever you like.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="get-started" class="mx-auto max-w-6xl px-6 py-20">
+        <div class="rounded-3xl bg-brand-700 px-8 py-14 text-center sm:px-16">
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to take control of your spending?</h2>
+          <p class="mx-auto mt-4 max-w-xl text-brand-100">Create your free Mimoni account and log your first expense in under a minute.</p>
+          <a href="#" class="mt-8 inline-block rounded-full bg-accent-500 px-8 py-3.5 font-semibold text-white transition hover:bg-accent-400">
+            Get started free
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-100">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-slate-500 sm:flex-row">
+        <a href="#" class="flex items-center gap-2 font-semibold text-brand-900">
+          <span class="grid size-7 place-items-center rounded-lg bg-brand-600 text-xs text-white">M</span>
+          Mimoni
+        </a>
+        <p>&copy; 2026 Mimoni. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

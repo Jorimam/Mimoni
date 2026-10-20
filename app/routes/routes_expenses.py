@@ -7,6 +7,10 @@ from ..database import get_db
 from ..models import model_expenses
 from ..schemas import schema_expenses
 
+
+from sqlalchemy.exc import IntegrityError
+
+
 router = APIRouter(prefix="/expenses", tags=["Expenses"])
 
 
@@ -46,12 +50,33 @@ def get_expense(expense_id: int, db: Session = Depends(get_db)):
     response_model=schema_expenses.ExpensesResponse,
     status_code=status.HTTP_201_CREATED,
 )
+
+
+
 def create_expense(
     expense_in: schema_expenses.ExpenseCreate, db: Session = Depends(get_db)
 ):
-    new_expense = model_expenses.Expenses(**expense_in.model_dump())
+    data = expense_in.model_dump()
+
+    existing_expense = (
+        db.query(model_expenses.Expenses).filter_by(**data).first()
+    )
+    if existing_expense:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Expense already exists",
+        )
+
+    new_expense = model_expenses.Expenses(**data)
     db.add(new_expense)
-    db.commit()
+    try:
+        db.commit()
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Expense already exists",
+        )
     db.refresh(new_expense)
     return new_expense
 
