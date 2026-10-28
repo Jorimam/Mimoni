@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   mimoni_db:
     image: mysql:8.0
@@ -9,7 +7,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}
     ports:
-      - "3308:3306" # Connect locally from your host machine on port 3308
+      - "3308:3306"
     volumes:
       - mimoni_db_data:/var/lib/mysql
     command: 
@@ -17,7 +15,8 @@ services:
       - --innodb_buffer_pool_size=256M
       - --innodb_log_file_size=128M
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$$MYSQL_ROOT_PASSWORD"]
+      # FIX: Use mysqladmin ping natively via CMD without hardcoding password syntax
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       timeout: 5s
       retries: 5

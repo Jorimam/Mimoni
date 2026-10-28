@@ -16,10 +16,12 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5500", "http://127.0.0.1:5500"],  # your frontend's origin
+    allow_origins=["*"],  # 👈 Open up for local development mapping tools
+    allow_credentials=True, # 👈 Crucial if your routes_auth routes use Cookies/Bearer headers
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(routes_expenses.router)
 app.include_router(routes_users.router)
